@@ -1,17 +1,32 @@
 # Receipt Processor
 
-Build a webservice that fulfils the documented API. The API is described below. A formal definition is provided 
-in the [api.yml](./api.yml) file. We will use the described API to test your solution.
-
-Provide any instructions required to run your application.
-
-Data does not need to persist when your application stops. It is sufficient to store information in memory. There are too many different database solutions, we will not be installing a database on our system when testing your application.
+Receipt processor is a webservice that fulfils two APIs. One API is `POST` to process the receipts, and another one is `GET` to get the points of the receipt.
 
 ## Language Prerequisites
 
-GO or Docker
+GO 1.23 or Docker
 
----
+## Run application
+
+#### Run locally with Go
+
+1. clone the repo  
+`git clone https://github.com/LydiaTeng369/receipt-processor-challenge.git`
+2. go to the application file  
+`cd receipt-processor-challenge`
+3. build the application  
+`go build -o receipt-processor`
+4. run application  
+`./receipt-processor`
+
+#### Run with Docker
+1. build docker image  
+`docker build -t receipt-processor-app .`
+2. run the application  
+`docker run -d -p 8080:8080 receipt-processor-app`
+
+After running the application, the sever will start on local host 8080. 
+
 ## Summary of API Specification
 
 ### Endpoint: Process Receipts
